@@ -8,12 +8,13 @@ resource "aws_instance" "frontend" {
               #!/bin/bash
               yum update -y
               dnf install nodejs -y
-              yum install -y httpd
-              systemctl start httpd
-              systemctl enable httpd
+              yum install -y nginx
+              systemctl start nginx
+              systemctl enable nginx
               yum install git -y
               EOF
   tags = {
     Name = "frontend-public"
   }
+
   }
